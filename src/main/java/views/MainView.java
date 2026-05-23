@@ -19,7 +19,7 @@ public class MainView {
 
     private VBox view;
 
-    // ================= CART =================
+
     private static class CartItem {
         String name;
         int qty;
@@ -45,7 +45,7 @@ public class MainView {
         Label welcome = new Label("Welcome, " + Session.currentUsername + "!");
         Label title = new Label("Cafe POS System");
 
-        // ================= CATEGORY =================
+
         ComboBox<String> categoryBox = new ComboBox<>();
         ComboBox<String> subcategoryBox = new ComboBox<>();
 
@@ -55,7 +55,7 @@ public class MainView {
             loadSubcategories(subcategoryBox, categoryBox.getValue());
         });
 
-        // ================= PRODUCT SEARCH =================
+
         TextField productSearch = new TextField();
         productSearch.setPromptText("Search product...");
 
@@ -113,7 +113,7 @@ public class MainView {
             }
         });
 
-        // ================= ADD TO CART =================
+
         addOrderBtn.setOnAction(e -> {
 
             try {
@@ -145,7 +145,7 @@ public class MainView {
             }
         });
 
-        // ================= RECEIPT =================
+
         TextArea receiptArea = new TextArea();
         receiptArea.setEditable(false);
         receiptArea.setPrefHeight(200);
@@ -227,7 +227,7 @@ public class MainView {
             }
         });
 
-        // ================= ADD PRODUCT (RESTORED) =================
+
         VBox addProductBox = new VBox(10);
 
         ComboBox<String> catAdd = new ComboBox<>();
@@ -303,7 +303,7 @@ public class MainView {
                 productMsg
         );
 
-        // ================= LAYOUT (UNCHANGED STYLE) =================
+
         VBox content = new VBox(10,
                 welcome,
                 title,
@@ -339,7 +339,6 @@ public class MainView {
         view.setPadding(new Insets(10));
     }
 
-    // ================= DB METHODS =================
 
     private void loadCategories(ComboBox<String> box) {
         try {
